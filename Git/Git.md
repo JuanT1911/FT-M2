@@ -81,4 +81,27 @@
 
     git checkout <branch name>
    Aquí podremos encontrar que estamos trabajando en la rama "branch name". Si hacemos git log en este punto, vamos a ver que el HEAD igualmente va a estar apuntando a cabecera y a master, pero si hacemos un cambio, luego commiteamos el cambio y hacemos git log de nuevo, veremos que ahora si el HEAD va a estar apuntando a la nueva.
-   
+
+   Desde Octubre de 2021 github cambió el nombre de su rama master a main (Principal), así entonces si estamos trabajando en una rama Master, vamos a tener problemas cuando intentemos crear el repositorio en Github, así que lo mejor es pasar todos nuestros archivos a una rama Main, esto lo podemos hacer fácilmente con el comando
+
+    git branch -M main
+   Aquí ya creamos la nueva rama y vamos a pasar todos los documentos que tenemos en la rama en al que estamos parados a la nueva rama. Tener en cuenta que para este caso la llamamos main, pero puede tener cualquier otro nombre.
+
+  ### **Creando un repositorio remoto:**
+   Lo primero que tenemos que hacer en este caso es ir a Github y decirle que queremos crear un nuevo repositorio, le ponemos nombre, una descripción pequeña, elegimos si queremos que sea un repositorio público o privado, luego escogemos si queremos ponerle un README (Siempre hay que ponerlo, es una buena práctica) y lo creamos. 
+
+   Después tendremos que subir nuestros archivos que ya hemos trabajado en nuestro computador, aquí hacemos:
+
+    git remote add origin <url>
+   Esta url la podemos obtener de github cuando le damos en clonar repositorio.
+
+   Después podemos hacer git remote y tendremos:
+
+    git remote
+    origin
+   Aquí vemos que se creo el origin u origen de nuestro repositorio nuevo. Luego hacemos
+
+    $ git remote -v
+    origin  https://github.com/JuanT1911/FT-M2.git (fetch)
+    origin  https://github.com/JuanT1911/FT-M2.git (push)
+   Cuando tenemos ese par de origin, vemos que ya tenemos los comando fetch y push y el link a donde va a ir direccionado todo lo que hagamos en este repositorio.
