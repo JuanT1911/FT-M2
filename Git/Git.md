@@ -105,3 +105,14 @@
     origin  https://github.com/JuanT1911/FT-M2.git (fetch)
     origin  https://github.com/JuanT1911/FT-M2.git (push)
    Cuando tenemos ese par de origin, vemos que ya tenemos los comando fetch y push y el link a donde va a ir direccionado todo lo que hagamos en este repositorio.
+
+   Ahora vamos a subir nuestro repositorio a Github, para hacer esto tecleamos el comando
+
+    git push origin main
+   Cuando hacemos esto lo que realmente queremos decir es "Git, por favor pushee o mande al origen la rama main", hay casos en los que ya hay archivos como tal en el origen, principalmente es el caso de los README, entonces lo que va a hacer git es pedir que por favor traiga los archivos del origen para luego mandar todos los archivos al origen. Esto se hace así:
+
+    git pull origin main
+   Comúnmente nos saltará un error que va a ser el de que no se permite fusionar (merge) historias no relacionadas (refusing to merge unrelated histories), aquí entonces vamos a solucionar esto con el comando
+    
+    git pull origin main --allow-unrelated-histories
+   
