@@ -115,4 +115,6 @@
    Comúnmente nos saltará un error que va a ser el de que no se permite fusionar (merge) historias no relacionadas (refusing to merge unrelated histories), aquí entonces vamos a solucionar esto con el comando
     
     git pull origin main --allow-unrelated-histories
+  
+   Después de esto ya podemos usar nuestros repositorios con normalidad y usar el git push y el git pull tranquilos, pilas, conocimos un nuevo estandar de seguridad conocido como SSH, es todo un proceso pero es importante para la seguridad del proyecto, no olvidar aplicar a cada computador donde se trabaje como tal.
    
