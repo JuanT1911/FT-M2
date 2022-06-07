@@ -80,5 +80,5 @@
    De esta manera tendremos una nueva rama llamada "branch name", pero igualmente en principio estaremos trabajando en la rama master. Para cambiar esto vamos a usar el comando
 
     git checkout <branch name>
-   Aquí podremos encontrar que estamos trabajando en la rama "branch name".Si hacemos git log en este punto, vamos a ver que el HEAD igualmente 
+   Aquí podremos encontrar que estamos trabajando en la rama "branch name".Si hacemos git log en este punto, vamos a ver que el HEAD igualmente va a estar apuntando a cabecera y a master, pero si hacemos un cambio, luego commiteamos el cambio y hacemos git log de nuevo, veremos que ahora si el HEAD va a estar apuntando a la nueva.
    
