@@ -117,4 +117,49 @@
     git pull origin main --allow-unrelated-histories
   
    Después de esto ya podemos usar nuestros repositorios con normalidad y usar el git push y el git pull tranquilos, pilas, conocimos un nuevo estandar de seguridad conocido como SSH, es todo un proceso pero es importante para la seguridad del proyecto, no olvidar aplicar a cada computador donde se trabaje como tal.
+  
+  ### **Viendo el versionado completo:**
+   Ya vimos que podemos ver las versiones de nuestro proyecto con el comando
+    
+    git log
+   Pero también podemos dar unos parámetros distintos para que git nos muestre más cosas, por ejemplo si hacemos:
+    
+    git log --all
+   Nos va a mostrar literalmente todo lo que se ha hecho ya que a veces, dependiendo de como se hacen las colaboraciones con las ramas y otras cosas, puede que no nos muestre todo. Si por ejemplo hacemos:
+
+    git log --all --graph
+   Nos va a mostrar las versiones como en una línea de tiempo coloreando de distintos colores las distintas ramas (branches) que se han trabajado. Otro muy útil es cuando ya tenemos muchas versiones, la opción anterior puede ser muy extensa, entonces podemos usar:
+
+    git log --all --graph --decorate --oneline
+   Aquí nos va a mostrar como antes, de forma gráfica las versiones y el camino que han seguido pero de manera más corta y resumida.
+  ### **Alias:**
+   Resulta que como pudimos ver en la última variante que vimos del log, es un comando muy muy largo, entonces podemos usar los tags, como estamos hablando de ramas, podemos asociar todo el proyecto a un arbolito, así entonces podemos hacer:
+
+    alias arbolito="git log --all --graph --decorate --oneline"
+   Y sencillamente la próxima vez que queramos usar este comando no vamos a tener que escribir todo el comando sino sencillamente:
+
+    arbolito
+   Y con eso será suficiente para que nos muestre el versionado gráficamente y resumido.
+  ### **Tags:**
+   Aquí vamos a ver por ejemplo cuando ya queremos publicar una versión de nuestro proyecto, entonces por ejemplo lo llamaremos versión 0.1 (v0.1), así que viendo el versionado vamos a tener los hash y el nombre de los commits que nosotros colocamos, pero podemos hacer algo del tipo
+
+    git tag -a version que queramos -m "Tag" hash
+    //Por ejemplo:
+    git tag -a v0.1 -m "Resultado primeras clases del curso" b93a9a8
+   Aunque en principio pareciera que nada hubiese cambiado, vamos a hacer
+
+    git tag
+   Y este comando nos va a mostrar todos los tags que tenemos, en este caso sólo tendremos el "v0.1". Si usamos el comando
+
+    git show-ref --tags
+   Nos va a mostrar el tag y el hash completo al que hace referencia.
+
+   Pero lo interesante no es que nosotros veamos el tag, en si sería meramente una etiqueta, lo importante es que alguien más lo pueda ver, eso como lo hacemos? Subiendo el tag al Github, así la otra persona sabe esa versión a que hace referencia y en que punto se quedó justo ahí.
+
+   Primero debemos hacer un
+
+    git pull origin main
+   Y después hacemos
    
+    git push origin --tags
+   Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referenc git
