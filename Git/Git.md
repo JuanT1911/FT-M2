@@ -162,4 +162,4 @@
    Y después hacemos
    
     git push origin --tags
-   Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referenc git
+   Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referencia.
