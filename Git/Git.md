@@ -40,7 +40,7 @@
     git show
 # **GitHub:**
 
- Aquí tenemos el repositorio remoto donde van a estar almacenados todos los archivos que queremos usar y compartir con otras personas, principalmente usado cuando trabajamos con más personas en un mismo proyecto. A continuación veremos algunos comandos para trabajar con git y github.
+ Aquí tenemos el repositorio remoto donde van a estar almacenados todos los archivos que queremos usar y compartir con otras personas, principalmente usado cuando trabajamos con más personas en un mismo proyecto. A continuación veremos algunos comandos para trabajar con git y GitHub.
  ## **Comandos:**
 ### **git add:**
   Este comando es bien conocido porque por medio de este vamos a subir los archivos que queremos al staging, podemos usar el . para subir todos los archivos o el nombre de archivo para sólo subir ese archivo. 
@@ -52,7 +52,7 @@
 
     git commit -m "Comentario"
  ### **git push:**
-  Aquí se viene la unión entre git y github, una vez que ya tenemos comiteados neustros cambios, vamos a subir nuestros cambios a github, esto lo hacemos por medio del comando git push, esto nos va a pushear o empujar los documentos a github y todas las personas en nuestro proyecto van a poder ver los cambios que hemos realizado.
+  Aquí se viene la unión entre git y GitHub, una vez que ya tenemos comiteados neustros cambios, vamos a subir nuestros cambios a GitHub, esto lo hacemos por medio del comando git push, esto nos va a pushear o empujar los documentos a GitHub y todas las personas en nuestro proyecto van a poder ver los cambios que hemos realizado.
 
     git push
     git push <url>
@@ -82,18 +82,37 @@
     git checkout <branch name>
    Aquí podremos encontrar que estamos trabajando en la rama "branch name". Si hacemos git log en este punto, vamos a ver que el HEAD igualmente va a estar apuntando a cabecera y a master, pero si hacemos un cambio, luego commiteamos el cambio y hacemos git log de nuevo, veremos que ahora si el HEAD va a estar apuntando a la nueva.
 
-   Desde Octubre de 2021 github cambió el nombre de su rama master a main (Principal), así entonces si estamos trabajando en una rama Master, vamos a tener problemas cuando intentemos crear el repositorio en Github, así que lo mejor es pasar todos nuestros archivos a una rama Main, esto lo podemos hacer fácilmente con el comando
+   Desde Octubre de 2021 GitHub cambió el nombre de su rama master a main (Principal), así entonces si estamos trabajando en una rama Master, vamos a tener problemas cuando intentemos crear el repositorio en GitHub, así que lo mejor es pasar todos nuestros archivos a una rama Main, esto lo podemos hacer fácilmente con el comando
 
     git branch -M main
    Aquí ya creamos la nueva rama y vamos a pasar todos los documentos que tenemos en la rama en al que estamos parados a la nueva rama. Tener en cuenta que para este caso la llamamos main, pero puede tener cualquier otro nombre.
+  ### **Manejo de ramas:**
+   Aquí vamos a aprender a movernos por medio de las ramas que ya hemos creado por medio del comando
+    
+    git branch nombreDeLaRama
+   Cuando ya tenemos varias ramas podemos usar el comando
+    
+    git show-branch
+   Para ver las ramas que existen y el historial de estas. Si queremos ver algo un poco más detallado podemos usar el comando
+    
+    git show-branch --all
+   Hay un comando que Git trae por defecto, por medio de este podemos ver de una forma más visual toda la historia de nuestras ramas. Este comando es
 
-  ### **Creando un repositorio remoto:**
-   Lo primero que tenemos que hacer en este caso es ir a Github y decirle que queremos crear un nuevo repositorio, le ponemos nombre, una descripción pequeña, elegimos si queremos que sea un repositorio público o privado, luego escogemos si queremos ponerle un README (Siempre hay que ponerlo, es una buena práctica) y lo creamos. 
+    gitk 
+   Pilas, esta es sólo una herramienta, recuerda no usarla mucho, los programadores usamos la consola ya que es más práctica y rápida.
+
+   Debemos tener en cuenta también que podemos enviar las distintas ramas a GitHub, esto lo hacemos pasando a la rama que queremos enviar y pusheándola;
+
+    git pull origin master //Buenas prácticas
+    git checkout origin nombreDeLaRama //Cambio de rama
+    git push origin nombreDeLaRama //Subimos la nueva rama
+ ## **Creando un repositorio remoto:**
+   Lo primero que tenemos que hacer en este caso es ir a GitHub y decirle que queremos crear un nuevo repositorio, le ponemos nombre, una descripción pequeña, elegimos si queremos que sea un repositorio público o privado, luego escogemos si queremos ponerle un README (Siempre hay que ponerlo, es una buena práctica) y lo creamos. 
 
    Después tendremos que subir nuestros archivos que ya hemos trabajado en nuestro computador, aquí hacemos:
 
     git remote add origin <url>
-   Esta url la podemos obtener de github cuando le damos en clonar repositorio.
+   Esta url la podemos obtener de GitHub cuando le damos en clonar repositorio.
 
    Después podemos hacer git remote y tendremos:
 
@@ -102,11 +121,11 @@
    Aquí vemos que se creo el origin u origen de nuestro repositorio nuevo. Luego hacemos
 
     $ git remote -v
-    origin  https://github.com/JuanT1911/FT-M2.git (fetch)
-    origin  https://github.com/JuanT1911/FT-M2.git (push)
+    origin  https://GitHub.com/JuanT1911/FT-M2.git (fetch)
+    origin  https://GitHub.com/JuanT1911/FT-M2.git (push)
    Cuando tenemos ese par de origin, vemos que ya tenemos los comando fetch y push y el link a donde va a ir direccionado todo lo que hagamos en este repositorio.
 
-   Ahora vamos a subir nuestro repositorio a Github, para hacer esto tecleamos el comando
+   Ahora vamos a subir nuestro repositorio a GitHub, para hacer esto tecleamos el comando
 
     git push origin main
    Cuando hacemos esto lo que realmente queremos decir es "Git, por favor pushee o mande al origen la rama main", hay casos en los que ya hay archivos como tal en el origen, principalmente es el caso de los README, entonces lo que va a hacer git es pedir que por favor traiga los archivos del origen para luego mandar todos los archivos al origen. Esto se hace así:
@@ -154,7 +173,7 @@
     git show-ref --tags
    Nos va a mostrar el tag y el hash completo al que hace referencia.
 
-   Pero lo interesante no es que nosotros veamos el tag, en si sería meramente una etiqueta, lo importante es que alguien más lo pueda ver, eso como lo hacemos? Subiendo el tag al Github, así la otra persona sabe esa versión a que hace referencia y en que punto se quedó justo ahí.
+   Pero lo interesante no es que nosotros veamos el tag, en si sería meramente una etiqueta, lo importante es que alguien más lo pueda ver, eso como lo hacemos? Subiendo el tag al GitHub, así la otra persona sabe esa versión a que hace referencia y en que punto se quedó justo ahí.
 
    Primero debemos hacer un
 
@@ -162,4 +181,18 @@
    Y después hacemos
    
     git push origin --tags
-   Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referenc git
+   Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referencia.
+
+   Puede suceder que nos equivoquemos haciendo los tags y depronto creamos un tag que después de un tiempo no tiene sentido o sencillamente ya no lo queramos tener, en ese punto entonces hacemos
+
+    git tag
+   Para ver todos los tags y poder ver el nombre que le pusimos al tag que ya no queremos. Entonces hacemos:
+
+    git tag -d nombreDelTag
+    git pull origin main //Por buenas prácticas
+    git push origin --tags
+   Pero como sabemos, Git no borra nada, esto porque ese tag puede ser una referencia a un release, que en caso de habernos equivocado, podemos volver a el, entonces internamente en mi computador no lo voy a tener, pero en GitHub si. Entonces para borrarlo completamente debo hacer el comando:
+
+    git push origin :refs/tags/nombreDelTag
+   Esto después de haber hecho todo lo anterior por buenas prácticas. 
+
