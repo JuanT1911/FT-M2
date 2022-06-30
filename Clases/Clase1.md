@@ -117,4 +117,54 @@ Para poder adaptar el tamaño de nuestra pantalla a otras pantallas más pequeñ
 
    Aquí tenemos el caso en que una vez que creamos un objeto, queremos darle texto interior, por eso se llama innerText, únicamente es el texto, ya que podríamos también añadirle alguna característica del tipo HTML, pero eso lo veremos más adelante.
 
--  
+- **elemento.addEventListener('evento', reacción):**
+   
+   Aquí tenemos la creación de un evento a un respectivo elemento, hay que ver que hay muchos eventos, clicks, highline, etc, etc, etc. Entonces la idea es que el elemento esté pendiente a esos eventos, una vez sucedan estos, se va a crear una reacción ya bien sea una función o que en si se haga algo en nuestro programa.
+
+***NOTA:*** Hay una situación que es cuando queremos acceder al elemento al cuál está haciendo referencia nuestro evento, esto es por medio de
+   
+    elemento.target
+
+Así vamos a acceder a ese elemento. En el demo de esta clase podemos ver que si hacemos console.log veremos que nos va a mostrar el div como tal, ese es el target de nuestro evento.
+
+```Javascript
+console.log(e.target) //<div id="uno">Uno</div>
+```
+## ***Operador if:***
+
+ Podemos usar un operador if en el cuál vamos a reducir la cantidad de líneas de código en nuestro programa, lo cuál lo hará más elegante. Esto lo haremos con:
+
+ ```javascript
+ let variable = (condición) ? valor1 : valor2
+ ```
+
+ Aquí entonces tenemos el caso en el que vamos a evaluar la condición, si es cierta vamos a recibir valor1, si no, entonces recibiremos valor2, es tal cuál el if y el else.
+
+# ***Clases:***
+ 
+ Para la creación de clases debemos hacer :
+ ```javascript
+ class nombreDeLaClase{
+   constructor(parametro1, parametro2){
+      this.parametro1 = parametro1;
+      this.parametro2 = parametro2;
+   }
+ }
+ ```
+Pero también existe otra manera de crear las clases y esto es por medio de funciones. Así:
+```javascript
+function funcion(parametro1, parametro2){
+   this.parametro1 = parametro1;
+   this.parametro2 = parametro2;
+}
+```
+### **Método map:**
+ Es un método el cuál se usa en Arrays, sencillamente se le pasa un array inicial y luego se le va a aplicar una función a los elementos del array, devolviendo otro array con la función cumplida:
+```javascript
+let numbers = [1, 2, 4, 8, 7, 10]
+let doubles = numbers.map(function(x){
+   return x * 2;
+});
+
+console.log(doubles) // [2, 4, 8, 16, 14, 20]
+```

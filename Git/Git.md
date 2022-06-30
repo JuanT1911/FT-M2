@@ -195,4 +195,43 @@
 
     git push origin :refs/tags/nombreDelTag
    Esto después de haber hecho todo lo anterior por buenas prácticas. 
+  ### **Rebase:**
+   Aquí tenemos el caso del rebase, es un comando por medio del cuál, en algún momento creamos una rama porque necesitabamos solucionar un error que teníamos en nuestro programa y luego quisimos juntarla con nuestra rama principal, pero en si queremos que nadie vea ese cambio que hicimos, es como pegar una rama con la otra y no ha pasado nada.
 
+   Pilas porque aunque podemos usarla porque por algo existe, los errores siempre suceden, igual es una mala práctica y no debemos usarla siempre, incluso debería usarse unicamente para repositorios locales, nada de usarlo en repositorios remotos, ya que rebase lo que hace es que altera la historia de lo que se hizo previamente y no vamos a tener un registro como tal de quien hizo que y cuando, entonces PILAS AHÍ.
+
+   Cuando usamos rebase primero debemos hacer rebase en la rama donde hicimos los cambios y luego si hacemos rebase a la rama principal, nada de hacerlo a la inversa porque puede generar una cantidad de conflictos muy grande. Igualmente debemos tener cuidado con usar rebase cuando la rama principal ya haya avanzado demasiado, ya que esto puede generar también muchos conflicto
+
+    git rebase ramaAFusionar
+  ### **Git stash:**
+   Es muy importante, sencillamente es como guardar los últimos cambios en temporal, esto para que si después necesitas cambiar a otra rama sin enviar los últimos cambios como tal, no puedes hacer checkout así no más ya que se pierde todo, lo mejor que puedes hacer es un git stash, va a quedar todo en un temporal, cambiar de rama y luego volver a la rama anterior y así puedes recuperar los cambios,  puedes también meter los cambios a otra rama con
+
+    git stash branch noombreDeLaRama
+   
+   O si hiciste algunos cambios que ya no van o que sencillamente rompieron el código, usas git stash, los cambios van a quedar en el temporal y tu vas a quedar parado en el último commit del repositorio y al final usas
+
+    git stash drop
+   
+   y borra ese temporal y quedas como al principio. También puedes usar
+    
+    git stash list
+   
+   para ver los temporales. Para acceder al último stash que hicimos usamos el comando 
+    
+    git stash pop
+   
+   Y volvemos a los cambios del último stash. Es muy usado en grupos de trabajo, MUY MUY USADO. Comúnmente se usa cuando los cambios que estás haciendo no ameritaban un rebase sino que estás experimentando como tal.
+  ### **Git clean:**
+   Este comando lo usamos cuando tenemos archivos no deseados en nuestro repositorio y los queremos eliminar, el comando
+
+    git clean
+
+   primero arroja un warning, esto ya que en si no sabemos que va a borrar entonces nos dice como "¿Seguro que quiere que borre lo que yo quiero borrar?". Para saber qué va a borrar usamos el comando
+
+    git clean --dry-run
+   
+   Aquí git nos va a mostrar que archivos va a borrar, si ya estamos seguros que esos son los archivos que queremos que borre usamos el comando 
+    
+    git clean -f
+
+   Pero pilas, hay archivos que git no nos va a eliminar, básicamente sabe la estructura de nuestro repositorio, o sea que si hay un archivo que el note como extraño va a eliminarlo, por otro lado el solo sabe de archivos, así que si va a alguna carpeta, esta no la va a borrar, entonces si tenemos que hacerlo manualmente, igual que los archivos que nosotros deseamos que ignorara en nuestro archivo .gitignore, aquí también los va a ignorar y también tenemos que eliminarlos nosotros mismos.
