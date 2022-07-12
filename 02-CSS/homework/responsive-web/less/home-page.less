@@ -12,6 +12,11 @@
       padding:0 15px;
     }
 
+    img{
+      .border();
+      width: 100%;
+      margin-top: 9px;
+    }
   }
 
   .music-images {
@@ -22,7 +27,7 @@
     img {
       width: 28%;
       margin: 20px 2.5%;
-      border-radius: 20px;
+      .border();
       height: 100%;
     }
   }
@@ -58,6 +63,7 @@
       }
 
       .btn {
+        .btn(white, @btn-bg-color, 10px);
       }
     }
 
