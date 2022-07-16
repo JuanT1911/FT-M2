@@ -23,6 +23,10 @@
     var arreglo = [1, 2, 3]
     var divs = document.querySelectorAll('div');
     var div = document.getElementById('uno');
+
+    div.addEventListener('click', function(e){
+      console.log(e.target);
+    })
     // divs.forEach(function(e) {
     //   e.addEventListener('click', function(evento) {
     //     if( evento.target.style.background == 'gray none repeat scroll 0% 0%') {
