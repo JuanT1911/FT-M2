@@ -117,7 +117,6 @@
     git pull origin main --allow-unrelated-histories
   
    Después de esto ya podemos usar nuestros repositorios con normalidad y usar el git push y el git pull tranquilos, pilas, conocimos un nuevo estandar de seguridad conocido como SSH, es todo un proceso pero es importante para la seguridad del proyecto, no olvidar aplicar a cada computador donde se trabaje como tal.
-  
   ### **Viendo el versionado completo:**
    Ya vimos que podemos ver las versiones de nuestro proyecto con el comando
     
@@ -163,3 +162,7 @@
    
     git push origin --tags
    Ahora en nuestro computador y en nuestro Git aparentemente no ha sucedido nada, pero realmente en GitHub hay una pestaña que dice tags, ahora dando click ahí podremos ver los tags que se han puesto y nos mandará a la versión a la que ese tag hace referencia.
+ ## **.gitignore:**
+  Aquí llegamos al punto en el que no queremos subir cierto elementos a nuestro repositorio que si está en la carpeta del mismo, por ejemplo una muy buena práctica es no subir los archivos binarios ya que a GItHub eso le va a pesar, lo que si se puede hacer es subir la imagen a una página externa y luego referenciarla desde ahí, otra cosa es por ejemplo todos los documentos donde se guardan las claves, archivos de renderizado y todo ese tipo de cosas, sencillamente no las vamos a subir por privacidad, lo que tenemos que hacer es entrar al documentos .gitignore y referenciar todos los documentos que no queremos subir al repo.
+ ## **README.md:**
+  Aquí tenemos una excelente práctica, este archivo nos permite dar una introducción al proyecto que estamos armando, todo proyecto debería de tener un README, incluso existen varios editores de markdown como [editor.md](https://pandao.github.io/editor.md/en.html).
